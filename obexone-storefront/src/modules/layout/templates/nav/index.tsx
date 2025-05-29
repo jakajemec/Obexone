@@ -42,7 +42,7 @@ export default async function Nav() {
               </LocalizedClientLink>
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
-                href="/kontakt"
+                href="/contact"
                 data-testid="nav-kontakt-link"
               >
                 Kontakt
