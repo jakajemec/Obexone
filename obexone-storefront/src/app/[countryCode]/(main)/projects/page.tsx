@@ -20,7 +20,7 @@ export default async function ProjectsPage({ params }: { params: { countryCode: 
       <div className="content-container">
         <div className="mb-12 text-center">
           <h1 className="text-5xl font-bold mb-12">Izvedeni projekti</h1>
-          <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-4xl mx-auto">
+          <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-8xl mx-auto">
             <p className="text-xl text-ui-fg-subtle">
               V nadaljevanju predstavljamo nekaj izbranih primerov sistemov, ki smo 
               jih uspešno izvedli pri naših strankah – tako v zasebnih hišah kot v poslovnih prostorih.
@@ -80,7 +80,7 @@ export default async function ProjectsPage({ params }: { params: { countryCode: 
         </div>
 
         <div className="mt-20">
-          <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-4xl mx-auto">
+          <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-8xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Varnostni sistemi v enodružni hiši</h2>
             <p className="text-xl text-ui-fg-subtle mb-6 mt-6">
               Nudimo celovite rešitve tako za domačo uporabo kot za poslovne objekte. Pri enem izmed projektov smo za stranko izvedli postavitev nadzornega sistema za zunanji nadzor hiše. Kamere so bile strateško nameščene okrog objekta in so se samodejno aktivirale, ko je uporabnik zapustil dom.
@@ -145,7 +145,7 @@ export default async function ProjectsPage({ params }: { params: { countryCode: 
         </div>
 
         <div className="mt-20">
-          <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-4xl mx-auto">
+            <div className="bg-ui-bg-subtle rounded-lg p-6 max-w-8xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Varnostni sistemi v kolesarski trgovini</h2>
             <div className="space-y-4">
               <p className="text-xl text-ui-fg-subtle mb-6">

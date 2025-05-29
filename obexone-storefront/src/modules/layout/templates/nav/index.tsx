@@ -49,7 +49,7 @@ export default async function Nav() {
               </LocalizedClientLink>
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
-                href="/o-nas"
+                href="/about"
                 data-testid="nav-o-nas-link"
               >
                 O nas
