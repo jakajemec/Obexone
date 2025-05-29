@@ -13,11 +13,6 @@ export default async function Nav() {
     <div className="sticky top-0 inset-x-0 z-50 group">
       <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="h-full">
-              <SideMenu regions={regions} />
-            </div>
-          </div>
 
           <div className="flex items-center h-full">
             <LocalizedClientLink
@@ -33,10 +28,45 @@ export default async function Nav() {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
+                href="/nadzorni-sistemi"
+                data-testid="nav-nadzorni-sistemi-link"
+              >
+                Nadzorni sistemi
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/projekti"
+                data-testid="nav-projekti-link"
+              >
+                Projekti
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/kontakt"
+                data-testid="nav-kontakt-link"
+              >
+                Kontakt
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/o-nas"
+                data-testid="nav-o-nas-link"
+              >
+                O nas
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/store"
+                data-testid="nav-izdelki-link"
+              >
+                Izdelki
+              </LocalizedClientLink>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+                Račun
               </LocalizedClientLink>
             </div>
             <Suspense
@@ -46,12 +76,13 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  Košarica (0)
                 </LocalizedClientLink>
               }
             >
               <CartButton />
             </Suspense>
+            <SideMenu regions={regions} />
           </div>
         </nav>
       </header>
