@@ -12,7 +12,7 @@ import { HttpTypes } from "@medusajs/types"
 const SideMenuItems = {
   Domov: "/",
   "Nadzorni sistemi": "/nadzorni-sistemi",
-  Projekti: "/projekti",
+  Projekti: "/projects",
   Kontakt: "/kontakt",
   "O nas": "/o-nas",
   Izdelki: "/izdelki",
