@@ -13,9 +13,9 @@ const SideMenuItems = {
   Domov: "/",
   "Nadzorni sistemi": "/nadzorni-sistemi",
   Projekti: "/projects",
-  Kontakt: "/kontakt",
-  "O nas": "/o-nas",
-  Izdelki: "/izdelki",
+  Kontakt: "/contacts",
+  "O nas": "/about",
+  Izdelki: "/store",
   Račun: "/account",
   Košarica: "/cart",
 }
