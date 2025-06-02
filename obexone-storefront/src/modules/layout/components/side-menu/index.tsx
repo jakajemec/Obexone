@@ -11,7 +11,7 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Domov: "/",
-  "Nadzorni sistemi": "/nadzorni-sistemi",
+  "Nadzorni sistemi": "/security_systems",
   Projekti: "/projects",
   Kontakt: "/contacts",
   "O nas": "/about",
@@ -19,6 +19,7 @@ const SideMenuItems = {
   Račun: "/account",
   Košarica: "/cart",
 }
+
 
 const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const toggleState = useToggleState()
