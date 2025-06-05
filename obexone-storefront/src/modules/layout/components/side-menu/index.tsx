@@ -13,7 +13,7 @@ const SideMenuItems = {
   Domov: "/",
   "Nadzorni sistemi": "/security_systems",
   Projekti: "/projects",
-  Kontakt: "/contacts",
+  Kontakt: "/contact",
   "O nas": "/about",
   Izdelki: "/store",
   Račun: "/account",

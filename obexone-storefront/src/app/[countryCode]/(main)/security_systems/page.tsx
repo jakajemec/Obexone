@@ -86,15 +86,17 @@ export default async function SurveillanceSystemsPage({ params }: { params: { co
             <p className="text-xl text-ui-fg-subtle mb-6">
               Naša ekipa za montažo nadzornih sistemov se osredotoča na profesionalnost in natančnost. Pomembno je, da so kamere postavljene na strateška mesta, kjer zagotavljajo popolno pokritost in varnost. Po montaži izvedemo temeljito testiranje sistema, da zagotovimo, da deluje brez napak.
             </p>
-            <p className="text-xl text-ui-fg-subtle mb-6">
+            
+            {/* Replace this <p> with a <div> */}
+            <div className="text-xl text-ui-fg-subtle mb-6">
               Naša montaža vključuje:
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-disc list-inside space-y-2 mt-2">
                 <li>Strategično postavitev kamer in senzorjev za maksimalno pokritost</li>
                 <li>Povezava sistema z lokalnim strežnikom ali oblakom</li>
                 <li>Usmerjanje in optimizacija omrežnih povezav</li>
                 <li>Izobraževanje uporabnikov o upravljanju sistema</li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
 
