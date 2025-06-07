@@ -12,6 +12,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  devIndicators: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
