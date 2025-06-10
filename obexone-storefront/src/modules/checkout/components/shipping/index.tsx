@@ -186,10 +186,10 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="grid">
             <div className="flex flex-col">
               <span className="font-medium txt-medium text-ui-fg-base">
-                Shipping method
+                Način dostave
               </span>
               <span className="mb-4 text-ui-fg-muted txt-medium">
-                How would you like you order delivered
+                Kakšen način dostave želite izbrati?
               </span>
             </div>
             <div data-testid="delivery-options-container">
@@ -223,7 +223,7 @@ const Shipping: React.FC<ShippingProps> = ({
                           checked={showPickupOptions === PICKUP_OPTION_ON}
                         />
                         <span className="text-base-regular">
-                          Pick up your order
+                          Prevzemite naročilo na prevzemni točki
                         </span>
                       </div>
                       <span className="justify-self-end text-ui-fg-base">

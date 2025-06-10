@@ -89,12 +89,12 @@ const Register = ({ setCurrentView }: Props) => {
         </SubmitButton>
       </form>
       <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+        Že imate račun?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          Prijavite se
         </button>
         .
       </span>
