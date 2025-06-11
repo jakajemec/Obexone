@@ -51,9 +51,8 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
 
   return (
     <div className="text-small-regular py-8">
-      <div className="grid grid-cols-2 gap-x-8">
-
-        {/* --- COLUMN 1: DYNAMIC METADATA PROPERTIES --- */}
+      <div className="grid grid-cols-1 gap-x-8">
+        {/* --- DYNAMIC METADATA PROPERTIES --- */}
         <div className="flex flex-col gap-y-4">
           <h3 className="text-large font-semibold mb-2">Specifikacije</h3>
 
@@ -73,45 +72,6 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             </>
           ) : (
             <p className="text-gray-500">No additional specifications available.</p>
-          )}
-        </div>
-
-        {/* --- COLUMN 2: HARDCODED DIRECT PRODUCT PROPERTIES --- */}
-        {/* ... (This column remains the same as previously provided) ... */}
-        <div className="flex flex-col gap-y-4">
-          <h3 className="text-large font-semibold mb-2">General Information</h3>
-
-          {product.ir_vision && (
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">IR nočni vid</span>
-              <p>{product.ir_vision}</p>
-            </div>
-          )}
-          {product.face_recognition && (
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">Razpoznava obrazov</span>
-              <p>{product.face_recognition}</p>
-            </div>
-          )}
-          {product.license_plate_recognition && (
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">Razpoznava registrskih tablic</span>
-              <p>{product.license_plate_recognition}</p>
-            </div>
-          )}
-          {product.weight && (
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">Weight</span>
-              <p>{product.weight} g</p>
-            </div>
-          )}
-          {product.length && product.width && product.height && (
-            <div className="flex items-center justify-between">
-              <span className="font-semibold">Physical Dimensions</span>
-              <p>
-                {`${product.length}L x ${product.width}W x ${product.height}H`}
-              </p>
-            </div>
           )}
         </div>
       </div>
