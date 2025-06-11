@@ -14,11 +14,11 @@ type ProductTabsProps = {
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = [
     {
-      label: "Informacije o proizvodu",
+      label: "Tehnične informacije",
       component: <ProductInfoTab product={product} />,
     },
     {
-      label: "Poštnina in vračilo",
+      label: "Dostava in montaža",
       component: <ShippingInfoTab />,
     },
   ]
@@ -47,16 +47,20 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Material</span>
+            <span className="font-semibold">Dimenzije</span>
             <p>{product.material ? product.material : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
-            <p>{product.origin_country ? product.origin_country : "-"}</p>
+            <span className="font-semibold">IR nočni vid</span>
+            <p>{product.ir_vision ? product.ir_vision : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
-            <p>{product.type ? product.type.value : "-"}</p>
+            <span className="font-semibold">Razpoznava obrazov</span>
+            <p>{product.face_recognition ? product.face_recognition : "-"}</p>
+          </div>
+          <div>
+            <span className="font-semibold">Razpoznava registrskih tablic</span>
+            <p>{product.license_plate_recognition ? product.license_plate_recognition : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
@@ -85,31 +89,27 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Hitra dostava</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+              Vaše naročilo bo obdelano in odposlano v najkrajšem možnem času.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Refresh />
           <div>
-            <span className="font-semibold">Simple exchanges</span>
+            <span className="font-semibold">Svetovanje</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
+              Če ste v dilemi glede določenega produkta nas kontaktirajte in naša ekipa vam bo svetovala.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Back />
           <div>
-            <span className="font-semibold">Easy returns</span>
+            <span className="font-semibold">Nudimo montažo in vzdrževanje</span>
             <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
+              Ekipa Obexone vam nudi tudi strokovno montažo in nadaljno vzdrževanje vašega sistema.
             </p>
           </div>
         </div>
