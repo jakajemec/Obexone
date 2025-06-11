@@ -1,13 +1,12 @@
 #!/bin/bash
 
 for port in 8000 9000; do
-  echo "Checking for processes on port $port..."
-  pids=$(sudo lsof -t -i tcp:$port)
-  if [ -z "$pids" ]; then
-    echo "No process found on port $port."
+  PIDS=$(sudo ss -tulpn | grep ":$port" | awk -F 'pid=' '{print $2}' | awk '{print $1}' | uniq)
+  if [ -z "$PIDS" ]; then
+    echo "No processes found on port $port."
   else
-    echo "Killing processes on port $port: $pids"
-    sudo kill -9 $pids
+    echo "Killing processes on port $port: $PIDS"
+    sudo kill -9 $PIDS
   fi
 done
 
