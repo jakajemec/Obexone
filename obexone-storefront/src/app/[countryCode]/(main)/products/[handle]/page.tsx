@@ -96,6 +96,10 @@ export default async function ProductPage(props: Props) {
     notFound()
   }
 
+  // --- ADD THIS CONSOLE.LOG HERE ---
+  console.log("Product data passed to ProductTemplate:", JSON.stringify(pricedProduct, null, 2));
+  // ---------------------------------
+
   return (
     <ProductTemplate
       product={pricedProduct}
