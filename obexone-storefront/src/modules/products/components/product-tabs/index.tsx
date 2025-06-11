@@ -42,33 +42,55 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 }
 
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
-
-  // Option 1: Simply return the key as is, or with basic capitalization
   const formatMetadataKey = (key: string): string => {
-    // Basic capitalization and replace underscores/hyphens with spaces for better readability
-    return key.charAt(0).toUpperCase() + key.slice(1).replace(/[_-]/g, ' ');
-  };
+    const withoutPrefix = key.replace(/^\d+\.\s*/, "").replace(/;+\s*$/, "")
+    return (
+      withoutPrefix.charAt(0).toUpperCase() +
+      withoutPrefix.slice(1).replace(/[_-]/g, " ")
+    )
+  }
+
+  let metadata: Record<string, unknown> = {}
+  if (typeof product.metadata === "string") {
+    try {
+      metadata = JSON.parse(product.metadata)
+    } catch {
+      metadata = {}
+    }
+  } else if (typeof product.metadata === "object" && product.metadata !== null) {
+    metadata = product.metadata
+  }
+
+  // Extract entries and sort by numeric prefix
+  const entries = Object.entries(metadata)
+    .filter(([key]) => key !== "_order") // skip _order key if present
+    .filter(([, value]) => value !== null && value !== undefined && value !== "")
+
+  // Sorting function: extract leading number prefix from key or default to large number
+  const sortByPrefix = (a: [string, unknown], b: [string, unknown]) => {
+    const getPrefixNumber = (key: string): number => {
+      const match = key.match(/^(\d+)\./)
+      return match ? parseInt(match[1], 10) : Number.MAX_SAFE_INTEGER
+    }
+    return getPrefixNumber(a[0]) - getPrefixNumber(b[0])
+  }
+
+  entries.sort(sortByPrefix)
 
   return (
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-1 gap-x-8">
-        {/* --- DYNAMIC METADATA PROPERTIES --- */}
         <div className="flex flex-col gap-y-4">
           <h3 className="text-large font-semibold mb-2">Specifikacije</h3>
 
-          {product.metadata && typeof product.metadata === 'object' && Object.keys(product.metadata).length > 0 ? (
+          {entries.length > 0 ? (
             <>
-          {Object.entries(product.metadata).map(([key, value]) => {
-            if (value === null || value === undefined || value === '') {
-              return null;
-            }
-            return (
-              <div key={key} className="flex flex-col mb-4"> {/* vertical stack with margin below */}
-                <span className="font-semibold">{formatMetadataKey(key)}</span> {/* Key on top */}
-                <p>{typeof value === "object" ? JSON.stringify(value) : String(value)}</p> {/* Value below */}
-              </div>
-            );
-          })}
+              {entries.map(([key, value]) => (
+                <div key={key} className="flex flex-col mb-4">
+                  <span className="font-semibold">{formatMetadataKey(key)}</span>
+                  <p>{typeof value === "object" ? JSON.stringify(value) : String(value)}</p>
+                </div>
+              ))}
             </>
           ) : (
             <p className="text-gray-500">No additional specifications available.</p>
@@ -76,9 +98,8 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
         </div>
       </div>
     </div>
-  );
-};
-
+  )
+}
 
 const ShippingInfoTab = () => {
   return (
