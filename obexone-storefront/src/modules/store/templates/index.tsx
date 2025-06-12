@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import Head from "next/head"
 
 import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
 import RefinementList from "@modules/store/components/refinement-list"
@@ -19,6 +20,13 @@ const StoreTemplate = ({
   const sort = sortBy || "created_at"
 
   return (
+
+    <>
+    {/* Add this for SEO */}
+    <Head>
+      <title>{`Vsi izdelki - ${sort}`}</title>
+    </Head>
+
     <div
       className="flex flex-col small:flex-row small:items-start py-6 content-container"
       data-testid="category-container"
@@ -37,6 +45,7 @@ const StoreTemplate = ({
         </Suspense>
       </div>
     </div>
+    </>
   )
 }
 

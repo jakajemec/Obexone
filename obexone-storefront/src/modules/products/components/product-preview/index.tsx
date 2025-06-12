@@ -29,23 +29,34 @@ export default async function ProductPreview({
   })
 
   return (
-    <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper">
-        <Thumbnail
-          thumbnail={product.thumbnail}
-          images={product.images}
-          size="full"
-          isFeatured={isFeatured}
-        />
-        <div className="flex txt-compact-medium mt-4 justify-between">
-          <Text className="text-ui-fg-subtle" data-testid="product-title">
-            {product.title}
-          </Text>
-          <div className="flex items-center gap-x-2">
-            {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
-          </div>
-        </div>
+<LocalizedClientLink href={`/products/${product.handle}`} className="group">
+  <div data-testid="product-wrapper">
+    <Thumbnail
+      thumbnail={product.thumbnail}
+      images={product.images}
+      size="full"
+      isFeatured={isFeatured}
+    />
+
+    {/* Title + Price */}
+    <div className="flex txt-compact-medium mt-4 justify-between">
+      {/* ✅ Darker title */}
+      <Text className="text-ui-fg-base font-medium" data-testid="product-title">
+        {product.title}
+      </Text>
+
+      <div className="flex items-center gap-x-2">
+        {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
       </div>
-    </LocalizedClientLink>
+    </div>
+
+    {/* 🔽 Description below */}
+    {product.subtitle && (
+      <Text className="text-ui-fg-muted text-sm mt-1 line-clamp-2">
+        {product.subtitle}
+      </Text>
+    )}
+  </div>
+</LocalizedClientLink>
   )
 }
