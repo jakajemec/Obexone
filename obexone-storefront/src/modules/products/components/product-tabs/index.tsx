@@ -6,6 +6,8 @@ import Refresh from "@modules/common/icons/refresh"
 
 import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
+import Support from "@modules/common/icons/support"
+import Maintenance from "@modules/common/icons/maintenance"
 
 type ProductTabsProps = {
   product: HttpTypes.StoreProduct
@@ -115,7 +117,7 @@ const ShippingInfoTab = () => {
           </div>
         </div>
         <div className="flex items-start gap-x-2">
-          <Refresh />
+          <Support />
           <div>
             <span className="font-semibold">Svetovanje</span>
             <p className="max-w-sm">
@@ -124,7 +126,7 @@ const ShippingInfoTab = () => {
           </div>
         </div>
         <div className="flex items-start gap-x-2">
-          <Back />
+          <Maintenance />
           <div>
             <span className="font-semibold">Nudimo montažo in vzdrževanje</span>
             <p className="max-w-sm">
