@@ -13,9 +13,9 @@ export default function ContactPage() {
         
         {/* Left Text Section */}
         <div className="flex-1 flex items-center justify-center">
-          <h2 className="text-6xl font-semibold text-gray-600 leading-tight">
+        <h2 className="text-4xl lg:text-6xl font-semibold text-gray-600 leading-tight">
           Začnimo ustvarjati vaš dom varnejši in pametnejši.
-          </h2>
+        </h2>
         </div>
 
         {/* Right Form Section */}
@@ -41,7 +41,7 @@ export default function ContactPage() {
             <input
               type="email"
               required
-              placeholder="Vaš e-pošta"
+              placeholder="Vaš e-poštni naslov"
               className="w-full p-3 rounded-full border border-gray-300"
             />
             <input

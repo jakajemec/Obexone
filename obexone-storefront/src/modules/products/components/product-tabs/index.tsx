@@ -95,7 +95,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
               ))}
             </>
           ) : (
-            <p className="text-gray-500">No additional specifications available.</p>
+            <p className="text-gray-500">Specifikacije niso na voljo. Za več informacij nas kontaktirajte.</p>
           )}
         </div>
       </div>
